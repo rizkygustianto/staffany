@@ -17,7 +17,7 @@ export default function EditShift() {
     const [endTime, setEndTime] = useState('')
 
     const getStaff = () => {
-        axios.get('http://staffany-test.herokuapp.com/staff')
+        axios.get('https://staffany-test.herokuapp.com/staff')
         .then(res => {
             console.log(res);
             setStaff(res.data)
@@ -25,7 +25,7 @@ export default function EditShift() {
     }
 
     const getShift = () => {
-        axios.get(`http://staffany-test.herokuapp.com/shift/${id}`)
+        axios.get(`https://staffany-test.herokuapp.com/shift/${id}`)
             .then(res => {
                 console.log(res);
                 setStaffId(res.data.StaffId)
@@ -41,7 +41,7 @@ export default function EditShift() {
             endTime: endTime
         }
 
-        axios.post(`http://staffany-test.herokuapp.com/shift/update/${id}`, payload)
+        axios.post(`https://staffany-test.herokuapp.com/shift/update/${id}`, payload)
         .then(res => {
             console.log(res);
             history.push('/shifts')

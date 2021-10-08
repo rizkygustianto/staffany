@@ -11,7 +11,7 @@ export default function Staff() {
     const [staffs, setStaffs] = useState([])
 
     const getStaff = () => {
-        axios.get('http://staffany-test.herokuapp.com/staff/shifts')
+        axios.get('https://staffany-test.herokuapp.com/staff/shifts')
             .then(res => {
                 console.log(res.data);
                 setStaffs(res.data)

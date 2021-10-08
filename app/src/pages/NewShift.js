@@ -17,7 +17,7 @@ export default function NewShift() {
     const [endTime, setEndTime] = useState('')
 
     const getStaff = () => {
-        axios.get('http://staffany-test.herokuapp.com/staff')
+        axios.get('https://staffany-test.herokuapp.com/staff')
             .then(res => {
                 console.log(res);
                 setStaff(res.data)
@@ -31,7 +31,7 @@ export default function NewShift() {
             startTime: startTime,
             endTime: endTime
         }
-        axios.post(`http://staffany-test.herokuapp.com/shift/create`, payload)
+        axios.post(`https://staffany-test.herokuapp.com/shift/create`, payload)
             .then(res => {
                 console.log(res);
                 history.push('/')

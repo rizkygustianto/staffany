@@ -11,7 +11,7 @@ export default function Home() {
     const [shifts, setShifts] = useState([])
 
     const getTodayShifts = () => {
-        axios.get('http://staffany-test.herokuapp.com/shifts/today')
+        axios.get('https://staffany-test.herokuapp.com/shifts/today')
             .then(res => {
                 console.log(res.data);
                 setShifts(res.data)
@@ -23,7 +23,7 @@ export default function Home() {
     }
 
     const deleteShift = (id) => {
-        axios.get(`http://staffany-test.herokuapp.com/shift/delete/${id}`)
+        axios.get(`https://staffany-test.herokuapp.com/shift/delete/${id}`)
             .then(res => {
                 console.log(res.data);
                 getTodayShifts()

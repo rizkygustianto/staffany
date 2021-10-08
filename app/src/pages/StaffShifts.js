@@ -13,7 +13,7 @@ export default function StaffShifts() {
     const [data, setData] = useState([])
 
     const getShifts = () => {
-        axios.get(`http://staffany-test.herokuapp.com/staff/${id}`)
+        axios.get(`https://staffany-test.herokuapp.com/staff/${id}`)
             .then(res => {
                 console.log(res.data);
                 setData(res.data)
@@ -25,7 +25,7 @@ export default function StaffShifts() {
     }
 
     const deleteShift = (shiftID) => {
-        axios.get(`http://staffany-test.herokuapp.com/shift/delete/${shiftID}`)
+        axios.get(`https://staffany-test.herokuapp.com/shift/delete/${shiftID}`)
             .then(res => {
                 console.log(res.data);
                 getShifts()
