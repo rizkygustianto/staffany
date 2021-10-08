@@ -16,6 +16,44 @@ class ShiftController {
             })
     }
 
+    static getTodaysShifts(req,res) {
+        let startHour = new Date().setHours(0,0,0,0)
+        let endHour = new Date().setHours(23, 59, 0, 0)
+        Shift.findAll({
+            where: {
+                startTime: {
+                    [Op.gt]: startHour,
+                    [Op.lt]: endHour
+                }
+            },
+            include: {
+                model: Staff
+            }
+        })
+            .then(result => {
+                res.status(200).json(result)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(400).json({
+                    message: 'Failed to get today shift data',
+                    error: err
+                })
+            })
+    }
+
+    static getOneShift(req,res) {
+        Shift.findByPk(req.params.id)
+            .then(result => res.status(200).json(result))
+            .catch(err => {
+                console.log(err);
+                res.status(400).json({
+                    message: 'Failed to get shift data',
+                    error: err
+                })
+            })
+    }
+
     static getAllShiftsWithStaff(req, res) {
         Shift.findAll({
             include: {

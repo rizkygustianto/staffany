@@ -5,17 +5,12 @@ const ShiftController = require('../controllers/ShiftController')
 route.get('/staff', StaffController.getAllStaff)
 route.get('/staff/shifts', StaffController.getAllStaffWithShifts)
 route.get('/shifts', ShiftController.getAllShiftsWithStaff)
+route.get('/shifts/today', ShiftController.getTodaysShifts)
+route.get('/shift/:id', ShiftController.getOneShift)
+route.get('/staff/:id', StaffController.getStaffByPkWithShifts)
 
 route.post('/shift/create', ShiftController.createShift)
 route.post('/shift/update/:id', ShiftController.updateShift)
 route.get('/shift/delete/:id', ShiftController.deleteShift)
-
-// route.get('/guests', Controller.getAllGuests)
-// route.get('/guest/:id', Controller.getOneGuest)
-// route.post('/guest/create', Controller.createGuest)
-// route.get('/guests/current', Controller.getCurrentGuests)
-
-// route.post('/checkin', Controller.checkIn)
-// route.post('/checkout', Controller.checkOut)
 
 module.exports = route

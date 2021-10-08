@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
   Shift.init({
     StaffId: {
       type: DataTypes.STRING,
-      foreignKey: true
+      foreignKey: true,
+      allowNull: false
     },
     startTime: {
       type: DataTypes.DATE,
