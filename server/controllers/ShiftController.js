@@ -28,7 +28,10 @@ class ShiftController {
             },
             include: {
                 model: Staff
-            }
+            },
+            order: [
+                ['startTime', 'ASC']
+            ]
         })
             .then(result => {
                 res.status(200).json(result)
@@ -58,7 +61,10 @@ class ShiftController {
         Shift.findAll({
             include: {
                 model: Staff
-            }
+            },
+            order: [
+                ['startTime', 'ASC']
+            ]
         })
             .then(result => {
                 res.status(200).json(result)
