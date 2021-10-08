@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import { Container, Form, Button, Table } from 'react-bootstrap'
+import { Container, Button, Table } from 'react-bootstrap'
 import { useHistory } from 'react-router'
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     const [shifts, setShifts] = useState([])
 
     const getTodayShifts = () => {
-        axios.get('http://localhost:3000/shifts/today')
+        axios.get('http://staffany-test.herokuapp.com/shifts/today')
             .then(res => {
                 console.log(res.data);
                 setShifts(res.data)
@@ -23,7 +23,7 @@ export default function Home() {
     }
 
     const deleteShift = (id) => {
-        axios.get(`http://localhost:3000/shift/delete/${id}`)
+        axios.get(`http://staffany-test.herokuapp.com/shift/delete/${id}`)
             .then(res => {
                 console.log(res.data);
                 getTodayShifts()

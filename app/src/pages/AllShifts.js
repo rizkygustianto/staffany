@@ -11,7 +11,7 @@ export default function AllShifts() {
     const [shifts, setShifts] = useState([])
 
     const getShifts = () => {
-        axios.get('http://localhost:3000/shifts')
+        axios.get('http://staffany-test.herokuapp.com/shifts')
             .then(res => {
                 console.log(res.data);
                 setShifts(res.data)
@@ -23,7 +23,7 @@ export default function AllShifts() {
     }
 
     const deleteShift = (id) => {
-        axios.get(`http://localhost:3000/shift/delete/${id}`)
+        axios.get(`http://staffany-test.herokuapp.com/shift/delete/${id}`)
             .then(res => {
                 console.log(res.data);
                 getShifts()
