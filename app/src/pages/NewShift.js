@@ -27,7 +27,7 @@ export default function NewShift() {
 
     const newShift = () => {
         let payload = {
-            staffId: staffId,
+            StaffId: staffId,
             startTime: startTime,
             endTime: endTime
         }

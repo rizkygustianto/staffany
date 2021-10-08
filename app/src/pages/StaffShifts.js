@@ -47,9 +47,9 @@ export default function StaffShifts() {
                     <Table hover>
                         <thead>
                             <tr>
-                                <th>Action</th>
                                 <th>Start Time</th>
                                 <th>End Time</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,9 +57,9 @@ export default function StaffShifts() {
                                 data.Shifts.map(shift => {
                                     return (
                                         <tr>
-                                            <td><Button onClick={() => editShift(shift.id)}>Edit</Button>  <Button onClick={() => deleteShift(shift.id)}>Delete</Button></td>
                                             <td>{new Date(shift.startTime).toLocaleString()}</td>
                                             <td>{new Date(shift.endTime).toLocaleString()}</td>
+                                            <td><Button onClick={() => editShift(shift.id)}>Edit</Button>  <Button variant='danger' onClick={() => deleteShift(shift.id)}>Delete</Button></td>
                                         </tr>
                                     )
                                 })

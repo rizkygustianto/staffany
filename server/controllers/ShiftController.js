@@ -78,17 +78,18 @@ class ShiftController {
             endTime: req.body.endTime,
             StaffId: req.body.StaffId
         }
+        console.log(payload, 'createshift');
         Shift.create(payload)
-            .then(result => {
-                res.status(200).json(result)
+        .then(result => {
+            res.status(200).json(result)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(400).json({
+                message: 'Failed to create shift',
+                error: err
             })
-            .catch(err => {
-                console.log(err);
-                res.status(400).json({
-                    message: 'Failed to create shift',
-                    error: err
-                })
-            })
+        })
     }
 
     static updateShift(req, res) {

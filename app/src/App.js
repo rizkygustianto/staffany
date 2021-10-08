@@ -16,17 +16,15 @@ function App() {
         <Route path='/staff/:id'>
           <StaffShifts />
         </Route>
-        <Route path='/shift/:id'>
-          <EditShift />
-        </Route>
-        
         <Route path='/staff'>
           <Staff />
+        </Route>
+        <Route path='/shift/:id'>
+          <EditShift />
         </Route>
         <Route path='/shifts'>
           <AllShifts />
         </Route>
-        
         <Route path='/new-shift'>
           <NewShift />
         </Route>
