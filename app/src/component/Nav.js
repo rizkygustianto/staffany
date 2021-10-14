@@ -12,7 +12,7 @@ export default function Navigation() {
                 </Link>
 
                 <Nav className="me-auto">
-                    <Link to='/' className='nav-link'>
+                    <Link to='/home' className='nav-link'>
                         {/* <Nav.Link> */}
                         Home
                         {/* </Nav.Link> */}

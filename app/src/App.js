@@ -28,7 +28,7 @@ function App() {
         <Route path='/new-shift'>
           <NewShift />
         </Route>
-        <Route path='/' exact>
+        <Route path='/home' exact>
           <Home />
         </Route>
       </Switch>

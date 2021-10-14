@@ -34,9 +34,10 @@ export default function EditShift() {
             })
     }
 
-    const editShift = () => {
+    const editShift = (event) => {
+        event.preventDefault()
         let payload = {
-            staffId: staffId,
+            StaffId: staffId,
             startTime: startTime,
             endTime: endTime
         }
@@ -80,7 +81,7 @@ export default function EditShift() {
                     <Form.Label>End Time</Form.Label>
                     <Form.Control type="datetime-local" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={() => editShift()}>
+                <Button variant="primary" type="submit" onClick={(e) => editShift(e)}>
                     Submit
                 </Button>
             </Form>

@@ -25,7 +25,8 @@ export default function NewShift() {
             })
     }
 
-    const newShift = () => {
+    const newShift = (event) => {
+        event.preventDefault()
         let payload = {
             StaffId: staffId,
             startTime: startTime,
@@ -34,7 +35,7 @@ export default function NewShift() {
         axios.post(`https://staffany-test.herokuapp.com/shift/create`, payload)
             .then(res => {
                 console.log(res);
-                history.push('/')
+                history.push('/home')
             })
             .catch(err => console.log(err))
     }
@@ -69,7 +70,7 @@ export default function NewShift() {
                     <Form.Label>End Time</Form.Label>
                     <Form.Control type="datetime-local" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
                 </Form.Group>
-                <Button variant="primary" type="submit" onClick={() => newShift()}>
+                <Button variant="primary" type="submit" onClick={(e) => newShift(e)}>
                     Submit
                 </Button>
             </Form>
